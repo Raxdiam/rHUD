@@ -1,4 +1,5 @@
 # rHUD
+Standalone roleplay and general purpose HUD for FiveM
 
 ## Information
 
