@@ -9,5 +9,5 @@ To report a bug, go to the [Issues](https://github.com/Raxdiam/rHUD/issues) tab.
 For one-on-one support for something related to rHUD, head over to the [Discord server](https://discord.gg/ugU6DsJWgc) and create a ticket.<br>
 For more information about rHUD itself, go to the [Wiki](https://github.com/Raxdiam/rHUD/wiki) tab (W.I.P.).
 
-Cfx.re Forum: [TBD]()<br>
+Cfx.re Forum: [rHUD - FiveM Resource Development & Modding / Releases - Cfx.re Community](https://forum.cfx.re/t/rhud/4855534)<br>
 Tebex: [Raxdiam Scripts | rHUD](https://raxdiam.tebex.io/package/5062603)
