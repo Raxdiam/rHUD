@@ -10,4 +10,4 @@ For one-on-one support for something related to rHUD, head over to the [Discord 
 
 Cfx.re Forum: [rHUD - FiveM Resource Development & Modding / Releases - Cfx.re Community](https://forum.cfx.re/t/rhud/4855534)<br>
 Tebex: [Raxdiam Scripts | rHUD](https://raxdiam.tebex.io/package/5062603)<br>
-Discord: [Raxdiam Script](https://discord.gg/ugU6DsJWgc)
+Discord: [Raxdiam Scripts](https://discord.gg/ugU6DsJWgc)
