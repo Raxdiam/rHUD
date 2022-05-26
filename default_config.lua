@@ -7,7 +7,7 @@ config = {
   general = {
     tick_delay = 50, -- Time in milliseconds between update ticks (default: 50, does not affect the other tick_delay options)
     chat_messages = false, -- Use chat for messages instead of notifications above the minimap (default: false)
-    minimap_border = true, -- Show a border around the minimap (default: false)
+    minimap_border = true -- Show a border around the minimap (default: true)
   },
   permissions = {
     aop = {
@@ -70,6 +70,7 @@ config = {
       enabled = true, -- Enable the info HUD module (default: true)
       postal = { -- Postals sub-module
         enabled = true, -- Enable the postal sub-module (default: true)
+        tick_delay = 100, -- Time in milliseconds between sub-module update ticks (default: 100)
         route_remove_range = 100.0, -- The range from the route destination to remove the waypoint (default: 100.0)
         messages = {
           route_deleted = "Route for postal code ~y~{code}~s~ deleted", -- {code} = Relevant postal code
@@ -90,19 +91,19 @@ config = {
       peacetime = { -- PeaceTime sub-module
         enabled = true, -- Enable the PeaceTime sub-module (default: true)
         disable_weapons = true, -- Disable weapons firing when in PeaceTime (default: true)
-        speed_limit = 88, -- Speed limit in mph (default: 88)
+        default_speed_limit = 60, -- Speed limit in mph (default: 60)
         messages = {
-          no_permission = "~r~You do not have permission to set PeaceTime",
-          violence = "~r~Violence is not allowed during Peacetime",
-          speeding = "~r~Speeding is not allowed during Peacetime",
+          no_permission = "~r~You do not have permission to set PeaceTime.",
+          violence = "~r~Violence is not allowed during Peacetime.",
+          speeding = "~r~You are speeding during Peacetime. Please slow down.",
         }
       },
       priority = { -- Priority sub-module
         enabled = true, -- Enable the priority sub-module (default: true)
         cooldown = 20, -- Priority cooldown time in minutes (default: 20)
         messages = {
-          in_progress = "~r~Priority call in progress. ~s~All other calls are on hold until conclusion. ~y~Interference will result in being kicked.",
-          cooldown = "~r~Priority call concluded. ~s~All civilians must wait ~r~{time}~s~ minutes before conducting another call.", -- {time} = Cooldown time in minutes
+          in_progress = "~r~Priority call in progress. ~s~All other calls are on hold until conclusion.",
+          cooldown = "~r~Priority call concluded. ~s~Civilians must wait ~r~{time}~s~ minutes before conducting another call.", -- {time} = Cooldown time in minutes
           priority_no_permission = "~r~You do not have permission to conduct a priority call.",
           cooldown_no_permission = "~r~You do not have permission to conlude a priority call.",
           onhold_no_permission = "~r~You do not have permission to put a priority call on hold.",
