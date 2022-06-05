@@ -1,5 +1,4 @@
--- For minimap notification formatting, refer to: https://docs.fivem.net/docs/game-references/text-formatting/
--- For chat formatting, refer to: https://forum.cfx.re/t/chat-formatting-colors-bold-underline/67641
+-- For text formatting, refer to: https://docs.fivem.net/docs/game-references/text-formatting/
 -- For control codes, refer to: https://docs.fivem.net/docs/game-references/controls/
 
 config = {
