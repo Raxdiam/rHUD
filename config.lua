@@ -7,31 +7,17 @@ config = {
   general = {
     tick_delay = 50, -- Time in milliseconds between update ticks (default: 50, does not affect the other tick_delay options)
     chat_messages = false, -- Use chat for messages instead of notifications above the minimap (default: false)
-    minimap_border = true -- Show a border around the minimap (default: true)
-  },
-  permissions = {
-    aop = {
-      enabled = true, -- Enable AOP permissions (default: true)
-      set_aop = "rhud.aop" -- Name of the permission (default: "rhud.aop")
-    },
-    peacetime = {
-      enabled = true, -- Enable PeaceTime permissions (default: true)
-      set_peacetime = "rhud.peacetime" -- Name of the permission (default: "rhud.peacetime")
-    },
-    priority = {
-      enabled = false, -- Enable priority permissions (default: false)
-      priority = "rhud.priority", -- Name of permission to use the "/priority" command (default: "rhud.priority")
-      cooldown = "rhud.priority.cooldown", -- Name of permission to use the "/priority cooldown" command (default: "rhud.priority.cooldown")
-      onhold = "rhud.priority.onhold", -- Name of permission to use the "/priority onhold" command (default: "rhud.priority.onhold")
-      reset = "rhud.priority.reset" -- Name of permission to use the "/priority reset" command (default: "rhud.priority.reset")
-    },
-    player = {
-      enabled = true, -- Enable player permissions (default: true)
-      heal_self = 'rhud.player.heal_self', -- Name of permission to use the "/heal" command to heal yourself (default: "rhud.player.heal_self")
-      heal_other = 'rhud.player.heal_other' -- Name of permission to use the "/heal" command to heal another player (default: "rhud.player.heal_other")
-    }
+    chat_prefix = "[^1r^0HUD]", -- Prefix for chat messages (default: "[rHUD]")
+    minimap_border = true, -- Show a border around the minimap (default: true)
+    minimap_vanilla = false -- Use the vanilla/base-game minimap (default: false)
   },
   modules = { -- HUD Modules
+    config_panel = { -- HUD Module for Config Panel
+      enabled = true, -- Enable the config panel (default: true)
+      -- Enforcing can be used to apply a specific style/layout to all players upon entering the server. Uses the exported options from the config panel, accessible with the "export" permission.
+      enforce_location = false, -- Enforce exported location options (default: false)
+      enforce_colors = false -- Enforce exported color options (default: false)
+    },
     land = { -- HUD Module for Landcraft
       enabled = true, -- Enable the landcraft HUD module (default: true)
       tick_delay = 50, -- Time in milliseconds between module update ticks (default: 50)
@@ -121,6 +107,34 @@ config = {
         heal_other_denied = "~r~You do not have permission to heal another player.",
         heal_self_denied = "~r~You do not have permission to heal yourself."
       }
+    }
+  },
+  permissions = {
+    aop = {
+      enabled = true, -- Enable AOP permissions (default: true)
+      set_aop = "rhud.aop" -- Name of the permission (default: "rhud.aop")
+    },
+    peacetime = {
+      enabled = true, -- Enable PeaceTime permissions (default: true)
+      set_peacetime = "rhud.peacetime" -- Name of the permission (default: "rhud.peacetime")
+    },
+    priority = {
+      enabled = false, -- Enable priority permissions (default: false)
+      priority = "rhud.priority", -- Name of permission to use the "/priority" command (default: "rhud.priority")
+      cooldown = "rhud.priority.cooldown", -- Name of permission to use the "/priority cooldown" command (default: "rhud.priority.cooldown")
+      onhold = "rhud.priority.onhold", -- Name of permission to use the "/priority onhold" command (default: "rhud.priority.onhold")
+      reset = "rhud.priority.reset" -- Name of permission to use the "/priority reset" command (default: "rhud.priority.reset")
+    },
+    player = {
+      enabled = true, -- Enable player permissions (default: true)
+      heal_self = "rhud.player.heal_self", -- Name of permission to use the "/heal" command to heal yourself (default: "rhud.player.heal_self")
+      heal_other = "rhud.player.heal_other" -- Name of permission to use the "/heal" command to heal another player (default: "rhud.player.heal_other")
+    },
+    config_panel = {
+      config = "rhud.config", -- Name of permission to open the config panel (default: "rhud.config", note: players with this perm will be able to open the config panel even if "modules > config_panel > enabled" is false)
+      export = "rhud.config.export", -- Name of permission to export from the config panel (default: "rhud.config.export", note: exported options are used for "modules > config_panel > enforce_location and enforce_colors")
+      location = "rhud.config.location", -- Name of permission to allow location options in the config panel (default: "rhud.config.location")
+      color = "rhud.config.color" -- Name of permission to allow color options in the config panel (default: "rhud.config.color")
     }
   },
   fuel = { -- Fuel sub-script options
