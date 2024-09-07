@@ -2,7 +2,7 @@
 -- For control codes, refer to: https://docs.fivem.net/docs/game-references/controls/
 
 config = {
-  version = 3, -- Config version. Do not change.
+  version = 2, -- Config version. Do not change.
   general = {
     tick_delay = 50, -- Time in milliseconds between update ticks (default: 50, does not affect the other tick_delay options)
     chat_messages = false, -- Use chat for messages instead of notifications above the minimap (default: false)
@@ -33,23 +33,6 @@ config = {
     air = { -- HUD Module for Aircraft
       enabled = true, -- Enable the aircraft HUD module (default: true)
       tick_delay = 5, -- Time in milliseconds between module update ticks (default: 5)
-      altimeter = { -- Altitude meter options
-        unit = "ft", -- Unit of measurement (default: "ft", options: "ft", "m", "custom")
-        unit_custom = 3.281, -- When `unit` is set to "custom", this is the multiplier to convert meters to the custom unit (default: 3.281)
-
-        -- Override function to calculate altitude. 
-        -- Takes an vehicle handle as an argument and should return a number representing the altitude.
-        -- Default behavior uses the `GetEntityHeight` native and multiplies the result by the specified unit.
-        --
-        -- Example override:
-        -- ```lua
-        -- override = function(veh)
-        --  return GetEntityHeightAboveGround(veh) * 3.281
-        -- end
-        -- ```
-        --- @type fun(veh: integer): number
-        override = nil
-      },
       fuel = { -- Only applies to helicopters
         refuel_enabled = true, -- Allow refueling using the controls set in the options for the fuel sub-script (default: true)
         warn_at = 20 -- Percentage of fuel remaining to turn indicator on (default: 20)
@@ -116,7 +99,6 @@ config = {
     player = { -- HUD Module for Player
       enabled = true, -- Enable the player HUD module (default: true)
       tick_delay = 100, -- Time in milliseconds between module update ticks (default: 100)
-      weapon_icon = true, -- Show weapon icon (default: true)
       messages = {
         healed_self = "Health restored.",
         healed_by = "Health restored by ~b~{player}~s~.", -- {player} = Player name
