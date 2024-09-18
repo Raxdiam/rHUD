@@ -1,9 +1,8 @@
 -- For text formatting, refer to: https://docs.fivem.net/docs/game-references/text-formatting/
--- For keybindings, refer to: https://docs.fivem.net/docs/game-references/input-mapper-parameter-ids/keyboard/
 -- For control codes, refer to: https://docs.fivem.net/docs/game-references/controls/
 
 config = {
-  version = 4, -- Config version. Do not change.
+  version = 3, -- Config version. Do not change.
   general = {
     tick_delay = 50, -- Time in milliseconds between update ticks (default: 50, does not affect the other tick_delay options)
     chat_messages = false, -- Use chat for messages instead of notifications above the minimap (default: false)
@@ -24,7 +23,7 @@ config = {
       use_kmph = false, -- Use km/h instead of mph (default: false)
       seatbelt = { -- Landcraft seatbelt sub-script
         enabled = true,
-        keybind = 'K' -- Default seatbelt keybind (default: 'K')
+        keybind = 311 -- Default: 311, K
       },
       fuel = { -- Landcraft specific options for the fuel sub-script
         refuel_enabled = true, -- Allow refueling using the controls set in the options for the fuel sub-script (default: true)
@@ -65,8 +64,7 @@ config = {
           keybind = 133, -- Key to press (default: 133, A)
           keybind_alt = 36 -- Key to hold (default: 36, LEFT CTRL)
         },
-        -- Keybind can only be used if `use_combo` is set to false
-        keybind = 'PAGEDOWN', -- Default anchor keybind (default: 'PAGEDOWN')
+        keybind = 317, -- Used if key combo is disabled (default: 317, PAGE DOWN)
         slack = 0.5 -- Anchor slack (default: 0.5)
       }
     },
@@ -172,8 +170,8 @@ config = {
   },
   control = { -- Vehicle control sub-script
     enabled = true, -- Enable the vehicle control sub-script (default: true)
-    hazard = 'BACK', -- Default hazard lights keybind (default: 'BACK')
-    leftSignal = 'MINUS', -- Default left turn signal keybind (default: 'MINUS')
-    rightSignal = 'EQUALS' -- Default right turn signal keybind (default: 'EQUALS')
+    hazard = 202, -- Default: 202, BACKSPACE
+    leftSignal = 84, -- Default: 84, -
+    rightSignal = 83 -- Default: 83, =
   }
 }
