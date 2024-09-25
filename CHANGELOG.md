@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.3.1 (2024-9-25)
+- Add more missing weapon icons
+- Fix fuel script help text not showing configured keybinds
+- Fix seatbelt sound effect playing when not in a vehicle
+
 ## v1.3.0 (2024-9-18)
 - Add missing weapon icons
 - Add support for custom icons
