@@ -3,13 +3,11 @@
 -- For control codes, refer to: https://docs.fivem.net/docs/game-references/controls/
 
 config = {
-  version = 4, -- Config version. Do not change.
+  version = 5, -- Config version. Do not change.
   general = {
-    tick_delay = 50, -- Time in milliseconds between update ticks (default: 50, does not affect the other tick_delay options)
+    tick_delay = 500, -- Time in milliseconds between update ticks (default: 500, does not affect the other tick_delay options)
     chat_messages = false, -- Use chat for messages instead of notifications above the minimap (default: false)
-    chat_prefix = "[^1r^0HUD]", -- Prefix for chat messages (default: "[rHUD]")
-    minimap_border = true, -- Show a border around the minimap (default: true)
-    minimap_vanilla = false -- Use the vanilla/base-game minimap (default: false)
+    chat_prefix = "[^1r^0HUD]", -- Prefix for chat messages (default: "[^1r^0HUD]")
   },
   modules = { -- HUD Modules
     config_panel = { -- HUD Module for Config Panel
@@ -18,12 +16,20 @@ config = {
       enforce_location = false, -- Enforce exported location options (default: false)
       enforce_colors = false -- Enforce exported color options (default: false)
     },
+    minimap = { -- HUD Module for Minimap
+      enabled = true, -- Enable custom rectangular minimap shape (default: true)
+      border = true, -- Show a border around the minimap (default: true)
+      vehicle_only = false -- Only show the minimap while in a vehicle (default: false)
+    },
     land = { -- HUD Module for Landcraft
       enabled = true, -- Enable the landcraft HUD module (default: true)
       tick_delay = 50, -- Time in milliseconds between module update ticks (default: 50)
       use_kmph = false, -- Use km/h instead of mph (default: false)
       seatbelt = { -- Landcraft seatbelt sub-script
-        enabled = true,
+        enabled = true, -- Enable the seatbelt sub-script (default: true)
+        alarm_sfx = true, -- Enable alarm sound effect when seatbelt is not buckled (default: true)
+        alarm_speed = 5, -- Vehicle speed to trigger the alarm (default: 5)
+        buckle_sfx = true, -- Enable buckle and unbuckle sound effects (default: true)
         keybind = 'K' -- Default seatbelt keybind (default: 'K')
       },
       fuel = { -- Landcraft specific options for the fuel sub-script
@@ -84,10 +90,11 @@ config = {
       },
       location = { -- Location sub-module
         enabled = true, -- Enable the location sub-module (default: true)
-        detect_vehicle = true -- Function only when player is in a vehicle (default: true)
+        vehicle_only = true -- Function only when player is in a vehicle (default: true)
       },
       aop = { -- AOP sub-module
         enabled = true, -- Enable the AOP sub-module (default: true)
+        default_text = "None", -- Default AOP text (default: "None")
         messages = {
           no_permission = "~r~You do not have permission to set AOP"
         }

@@ -1,5 +1,16 @@
 # Changelog
 
+## v1.4.0 (2024-10-25)
+- Add config option for minimap to be displayed only while in a vehicle
+- Add config option for default AOP text
+- Add config option to toggle seatbelt un/buckle sound effects
+- Add seatbelt warning alarm sound effect and config option
+- Fix seatbelt being available while driving motorbike
+- Fix fuel gauge not using max vehicle fuel value when fuel sub-script is disabled
+- Fix HUD being visible before player is spawned in QBCore and ESX frameworks
+- Fix location info module taking unusual amount of CPU time
+- Change config panel so minimap and its border can be adjusted even when location is enforced
+
 ## v1.3.1 (2024-9-25)
 - Add more missing weapon icons
 - Fix fuel script help text not showing configured keybinds
