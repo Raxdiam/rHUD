@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.4.1 (2024-11-13)
+- Fix seatbelt unbuckling when opening pause menu
+- Fix minimap not adjustable on aspect ratios other than 16:9
+
 ## v1.4.0 (2024-10-25)
 - Add config option for minimap to be displayed only while in a vehicle
 - Add config option for default AOP text
