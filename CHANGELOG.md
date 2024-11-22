@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.4.2 (2024-11-21)
+- Fix missing confirm button for minimap config panel when enforcing colors/locations
+
 ## v1.4.1 (2024-11-13)
 - Fix seatbelt unbuckling when opening pause menu
 - Fix minimap not adjustable on aspect ratios other than 16:9
