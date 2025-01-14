@@ -90,6 +90,8 @@
   "config.water.speedo.value": "Value",
   "config.water.speedo.value_glow": "Value Glow",
   "config.water.speedo.unit": "Unit",
+  "config.water.fuel_gauge.title": "Fuel Gauge",
+  "config.water.fuel_gauge.dial": "Dial",
   "config.water.indicators.title": "Indicators",
   "config.water.indicators.engine": "Engine",
   "config.water.indicators.anchor": "Anchor",
