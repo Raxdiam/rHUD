@@ -1,0 +1,49 @@
+---
+title: "Error: You lack the required entitlement"
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+When you try to run a script on a server that doesn't match the original account's credentials (or license key), 
+FiveM will block execution and display this error in your server console (or client F8 console):
+```
+You lack the required entitlement to use rhud
+```
+
+---
+
+## Causes and Solutions
+
+1. ### Server Not Restarted  
+   After purchasing or transferring the resource, your server session may still be using outdated entitlement data.
+   <Callout title="Solution">
+     - **Perform a full server restart:** Shut down your server completely, wait a few seconds, and start it again.  
+     - **Verify the console logs:** After restarting, check the server console to confirm if the entitlement error persists.
+   </Callout>
+
+2. ### Incorrect License Key  
+   The server could be using a license key that is not linked to the account that owns the resource.
+   <Callout title="Solution">
+     - **Confirm correct license key:** Log-in to the [Cfx.re Portal](https://portal.cfx.re/) with the **same account** that purchased (or currently holds) the resource.
+     - **Create or copy the key:** copy the license key for your server, or create a new key if needed.
+     - **Apply key in `server.cfg`:** Update your server's `server.cfg` file with the new license key:
+       ```cfg
+       sv_licenseKey "YOUR_LICENSE_KEY_HERE"
+       ```
+     - **Restart the server**
+   </Callout>
+
+3. ### Purchased on the Wrong Account  
+   If the resource was purchased on a different account and you need it on yours (or vice versa), you will need to transfer ownership.
+   <Callout title="Solution">
+     **Transfer Ownership:**
+     1. Log-in to the [Cfx.re Portal](https://portal.cfx.re/) with the **account that purchased the resource**.
+     2. Go to the **Assets** tab.
+     3. Choose the resource and click **Transfer**.
+     4. Enter the **recipient's Cfx.re username** when prompted and click **Transfer**.[^1]
+   </Callout>
+
+---
+
+[^1]: **A resource can only be transferred once and is irreversible. Make sure you are transferring to the correct account.**\
+For more information and detailed instructions, refer to [How to transfer an asset](https://support.cfx.re/hc/en-us/articles/16539411062044-How-to-transfer-an-asset) on Cfx.re

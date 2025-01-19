@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "index",
+    "install",
+    "asset-escrow",
+    "faq/index",
+    "---Information---",
+    "commands",
+    "editable-funcs",
+    "guides",
+    "---Reference---",
+    "ref/locale-codes"
+  ]
+}

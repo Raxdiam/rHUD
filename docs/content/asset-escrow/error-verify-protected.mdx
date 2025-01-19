@@ -1,0 +1,44 @@
+---
+title: "Error: Failed to verify protected resource"
+---
+
+This resource is protected and may display a common error in both the server console and the client's F8 console:
+```
+Failed to verify protected resource rhud
+```
+
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+## Causes and Solutions
+1. ### Missing or Corrupted Encrypted Files
+   The `.fxap` file is either missing or was corrupted during file transfer. Some file transfer methods or certain FTP client (such as FileZilla) are known to skip or corrupt encrypted files.
+   <Callout title="Solution">
+     - **Include the `.fxap` file:** Make sure the `.fxap` file is present in the resource folder.
+     - **Use an alternative FTP client:** Switch to a more reliable FTP client such as WinSCP to ensure the `.fxap` file is properly uploaded.
+     - **Re-download:** If the error persists, download the resource from the [Cfx.re Portal](https://portal.cfx.re/) again in case it was corrupted during download the last time.
+   </Callout>
+2. ### Outdated Server Version
+   If your server is below a certain version (commonly 5181+), the resource may fail verification.
+   <Callout title="Solution">
+     - **Check your current artifacts version:** Update your server artifacts to version 5181 or higher (or the latest available version).[^1]
+     - **Restart your server:** After updating, perform a full server restart to apply the changes.
+   </Callout>
+3. ### Improper Installation Method
+   Transferring the resource folder file by file instead of uploading the entire `.zip` can lead to missing or corrupted files.
+   <Callout title="Solution">
+     - **Upload the `.zip` directly:** Transfer the ZIP file in its entirety to your VPS and extract it there.
+     - **Avoid partial uploads:** Ensure the entire directory (including hidden files) is intact after extraction.
+   </Callout>
+4. ### Restart Requirements
+   If you have just uploaded or updated the resource without restarting the server, verification may fail.
+    <Callout title="Solution">
+      Restart the server after uploading or updating the resource.
+    </Callout>
+
+---
+
+[^1]: **FiveM server artifacts listings:**
+    - **Windows:** https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/
+    - **Linux:** https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/

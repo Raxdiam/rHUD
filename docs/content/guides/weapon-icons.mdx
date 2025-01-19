@@ -1,0 +1,17 @@
+---
+title: Weapon Icons
+---
+
+As of rHUD 1.3.0, weapon icons can be customized or added to the HUD.
+
+- Weapon icons are stored in `rhud/ui/icons` as PNG files. The icons will always appear as a solid color with an outline in-game; 
+any details in the image itself will not be visible.
+- The image format of the icon does not matter so long as there are transparent pixels around the shape. If a format that does not support transparency is used, it will appear as a solid-colored rectangle in-game.
+- Weapon icons are referenced by the weapon's ID (i.e. spawn code) in `rhud/data/weapons.json`.
+
+## Addon Weapons
+If your server uses addon weapons and you want an icon to appear for them, follow these steps:
+1. Edit `rhud/data/weapons.json` to include the ID of your weapon.
+2. Create an image file for your weapon. Ideally, it should be a solid color silhouette of the weapon with transparent pixels around the shape.
+3. Rename the image file to your weapon's ID followed by the image extension (e.g. `weapon_myweapon.png`).
+4. Move or copy the image file to `rhud/ui/icons`.

@@ -1,0 +1,29 @@
+---
+title: Postals
+---
+
+Postal codes are supported and displayed, but rHUD does not come with its own postal map.\
+To use your own postal codes, replace the default `rhud/data/postals.json`[^1] with your own.
+
+## Postal Codes File
+The postal codes file is a JSON array of objects, where each object contains the following properties:
+| Property | Type   | Description                         |
+|----------|--------|-------------------------------------|
+| `code`   | string | The postal code                     |
+| `x`      | number | The X-coordinate of the postal code |
+| `y`      | number | The Y-coordinate of the postal code |
+
+```json title="Example"
+[
+  { "code": "001", "x": 57.89, "y": 7211.67 },
+  { "code": "002", "x": 172.54, "y": 7081.23 },
+  { "code": "003", "x": 76.15, "y": 7029.15 },
+]
+```
+
+### If your postal codes file isn't working
+1. Make sure the file name is `postals.json` and is located in the `rhud/data` folder.
+2. Check the contents of your postal codes file. Make sure the format is consistent with the example in the above [Postal Codes File](#postal-codes-file) section.
+
+[^1]: The contents of the default `postals.json` file is originally from a postal map called 
+[oulsen_satmap](https://github.com/Oulsen/oulsen_satmap)

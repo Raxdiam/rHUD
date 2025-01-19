@@ -1,0 +1,33 @@
+---
+title: Localization 
+---
+
+As of rHUD v1.5.0, all text in rHUD can be localized to different languages.\
+Locale files are stored in `rhud/locale` as JSON files. By default rHUD is localized to English (`en-US.json`).
+
+## Using a Different Locale
+To use a different locale, change the `general > locale` option in the `config.lua` file to the name of the locale file you want to use.\
+For example, if you have a locale file named `de-DE.json`, the `locale` option should be set to `'de-DE'`.
+```lua title="config.lua"
+config = {
+  ...
+  general = {
+    ...
+    locale = 'en-US' -- Locale for all in-game text (default: 'en-US') [!code --]
+    locale = 'de-DE' -- Locale for all in-game text (default: 'en-US') [!code ++]
+...
+```
+
+## Translating rHUD
+To translate rHUD to a different language, follow these steps:
+1. **Copy and Rename the Locale File**\
+Make a copy of `en-US.json` within the `rhud/locale` folder and rename it to a [locale code](/reference/locale_codes) of the language you are translating to.[^1]
+2. **Translate the Values, not the Keys**\
+The contents of the locale file is a JSON object containing key-value pairs. Translate only the values; the keys must remain the same.
+3. **Edit the Config File**\
+To use the translated locale, change the `general > locale` option in the `config.lua` file to the name of the locale file you just created, but without the `.json` extension.\
+Refer to the example in [**Using a Different Locale**](#using-a-different-locale).
+
+
+
+[^1]: Renaming the file to a locale code is not required, but recommended for consistency.

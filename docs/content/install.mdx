@@ -1,0 +1,35 @@
+---
+title: Installation
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+  <Step>
+    Place the `rhud` folder into your server's `resources` folder.
+  </Step>
+  <Step>
+    Add the line `start rhud` **or** `ensure rhud` somewhere in your server config.
+  </Step>
+  <Step>
+    Add the line `exec @rhud/permissions.cfg` somewhere in your server config **before** the line added in step 2.
+  </Step>
+</Steps>
+
+### Example
+```properties title="server.cfg"
+# above contents of server.cfg ... 
+
+exec @rhud/permissions.cfg # [!code ++]
+
+ensure mapmanager
+ensure chat
+ensure spawnmanager
+ensure sessionmanager
+ensure basic-gamemode
+ensure hardcap
+ensure fivem-ipl
+ensure rhud # [!code ++]
+
+# below contents of server.cfg ...
+```
