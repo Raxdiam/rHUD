@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.5.0 (2024-1-19)
+- Added localization support
+- Added editable functions
+  - Aircraft altitude override removed and is now an editable function
+  - Contains editable function for getting fuel level
+- Added config options to show fuel gauge for airplanes and watercraft
+  - The built-in fuel script does not affect their fuel levels, this is meant for external fuel scripts
+  - Uses the `GetFuelLevel` editable function to retrieve fuel level
+- Added config options for seatbelt windshield flythrough
+- Added config option for seatbelt alarm delay
+- Added exported function for setting seatbelt indicator
+- Sound effects now use the game's SFX volume setting
+
 ## v1.4.2 (2024-11-21)
 - Fix missing confirm button for minimap config panel when enforcing colors/locations
 
