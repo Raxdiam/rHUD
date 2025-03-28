@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.5.0 (2024-1-19)
+## v1.5.0 (2025-1-19)
 - Added localization support
 - Added editable functions
   - Aircraft altitude override removed and is now an editable function
