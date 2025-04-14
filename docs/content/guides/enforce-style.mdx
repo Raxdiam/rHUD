@@ -1,0 +1,38 @@
+---
+title: Enforce Style
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+HUD element position and colors can be enforced, applying a specific style for all players upon joining the server.
+
+<Steps>
+  <Step>
+## Prepare Permission
+To set up an enforced style, you will need to make sure you have the necessary permission to export position and color options in the config panel.\
+By default, rHUD's `permissions.cfg` file includes the `rhud.config.export` permission for the `admin` group.
+
+```properties title="permissions.cfg"
+# above contents of permissions.cfg ...
+add_ace group.admin rhud.config.export allow
+# below contents of permissions.cfg ...
+```
+  </Step>
+  <Step>
+## Export Options
+1. Open the in-game config panel.
+2. Adjust the position and color options of each module to your liking.
+3. Click the `Export Positions` and/or `Export Colors` buttons at the bottom of the config panel.
+    - This will write to `rhud/data/hud_locations.json` and `rhud/data/hud_colors.json` respectively.
+  </Step>
+  <Step>
+## Enforce Options
+1. Open the `rhud/config.lua` file.
+2. Set the `config > modules > enforce_location` and/or `config > modules > enforce_color` options to `true`.[^1]
+3. Restart `rhud` or the server for the changes to take effect.
+  </Step>
+</Steps>
+
+---
+
+[^1]: Once enforcement options are set to `true`, the respective options in the config panel will be disabled for all players, including those with the `config` permission.
