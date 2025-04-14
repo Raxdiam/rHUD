@@ -5,10 +5,14 @@
     "asset-escrow",
     "faq/index",
     "---Information---",
+    "config",
     "commands",
     "editable-funcs",
+    "exports",
+    "objects",
     "guides",
     "---Reference---",
+    "ref/config",
     "ref/locale-codes"
   ]
 }
