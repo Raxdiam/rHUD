@@ -1,0 +1,116 @@
+---
+title: Server
+---
+
+## `get_aop()`
+Gets the AOP status text.
+
+### Returns
+| Returns | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | The AOP status text. |
+
+### Example
+```lua title="server.lua"
+local aop = exports.rhud:get_aop()
+```
+
+---
+
+## `set_aop(text)`
+Sets the AOP status text.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `text` | `string` | The AOP status text. |
+
+### Example
+```lua title="server.lua"
+exports.rhud:set_aop('Los Santos')
+```
+
+---
+
+## `clear_aop()`
+Clears the AOP status text.
+
+### Example
+```lua title="server.lua"
+exports.rhud:clear_aop()
+```
+
+---
+
+## `get_peacetime()`
+Gets whether PeaceTime is active.
+
+### Returns
+| Returns | Type | Description |
+| --- | --- | --- |
+| `active` | `boolean` | Whether PeaceTime is active. |
+
+### Example
+```lua title="server.lua"
+local peacetime = exports.rhud:get_peacetime()
+```
+
+---
+
+## `set_peacetime(active)`
+Sets whether PeaceTime is active.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `active` | `boolean` | Whether PeaceTime is active. |
+
+### Example
+```lua title="server.lua"
+exports.rhud:set_peacetime(true)
+```
+
+---
+
+## `toggle_peacetime()`
+Toggles the PeaceTime status.
+
+### Example
+```lua title="server.lua"
+exports.rhud:toggle_peacetime()
+```
+
+---
+
+## `get_priority()`
+Gets the current priority status.
+
+### Returns
+| Returns | Type | Description |
+| --- | --- | --- |
+| `status` | `"active" \| "cooldown" \| "inactive" \| "onhold"` | The priority status. |
+
+### Example
+```lua title="server.lua"
+local priority = exports.rhud:get_priority()
+```
+
+---
+
+## `set_priority(status, text)`
+Sets the current priority status.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `status` | `"active" \| "cooldown" \| "inactive" \| "onhold"` | The priority status. |
+| `text` | `string?` | The priority status text.<br />Only used for `"active"` status. |
+
+### Examples
+```lua title="server.lua"
+exports.rhud:set_priority('active', 'AUsername')
+```
+
+```lua title="server.lua"
+exports.rhud:set_priority('inactive')
+```

@@ -1,0 +1,132 @@
+---
+title: Client
+---
+
+## `get_visible()`
+Gets whether the HUD is visible.
+
+### Returns
+| Returns | Type | Description |
+| --- | --- | --- |
+| `visible` | `boolean` | Whether the HUD is visible. |
+
+### Example
+```lua title="client.lua"
+local visible = exports.rhud:get_visible()
+```
+
+---
+
+## `set_visible(visible)`
+Sets whether the HUD is visible.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `visible` | `boolean` | Whether the HUD is visible. |
+
+### Example
+```lua title="client.lua"
+exports.rhud:set_visible(true)
+```
+
+---
+
+## `toggle_visible()`
+Toggles the visibility of the HUD.
+
+### Example
+```lua title="client.lua"
+exports.rhud:toggle_visible()
+```
+
+---
+
+## `create_info(options)`
+Creates a custom segment to the info module.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `options` | [`InfoOptions`](/objects/info-options/) | The options for the segment. |
+
+### Returns
+| Returns | Type | Description |
+| --- | --- | --- |
+| `info` | [`Info`](/objects/info/) | The info segment. |
+
+### Example
+```lua title="client.lua"
+local example_info = exports.rhud:create_info({
+  id = 'example_info',
+  visible = true,
+  label = 'Example Info',
+  content = 'Example Content'
+})
+```
+
+---
+
+## `remove_info(id)`
+Removes a custom segment from the info module.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `id` | `string` | The ID of the segment to remove. |
+
+### Returns
+| Returns | Type | Description |
+| --- | --- | --- |
+| `success` | `boolean` | Whether the segment was removed successfully. |
+
+### Example
+```lua title="client.lua"
+local success = exports.rhud:remove_info('example_info')
+```
+
+---
+
+## `get_postal()`
+**Alternate:** `getPostal()`\
+Gets the nearest postal code of the player's current location.
+
+### Returns
+| Returns | Type | Description |
+| --- | --- | --- |
+| `postal` | `string` | The nearest postal code. |
+
+### Example
+```lua title="client.lua"
+local postal = exports.rhud:get_postal()
+```
+
+---
+
+## `set_indicator_seatbelt(state)`
+Sets the seatbelt indicator on or off.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `state` | `boolean` | Whether the seatbelt indicator is on or off. |
+
+### Example
+```lua title="client.lua"
+exports.rhud:set_indicator_seatbelt(true)
+```
+
+---
+
+## `set_indicator_anchor(state)`
+Sets the anchor indicator on or off.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `state` | `boolean` | Whether the anchor indicator is on or off. |
+
+### Example
+```lua title="client.lua"
+exports.rhud:set_indicator_anchor(true)
+```
