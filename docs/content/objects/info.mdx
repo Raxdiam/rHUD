@@ -1,0 +1,122 @@
+---
+title: Info
+---
+
+{/* 
+
+--- @class Info
+--- @field id string The ID of the info pill.
+--- @field visible boolean Whether the info pill is visible.
+--- @field label string? The label of the info pill.
+--- @field style string? The CSS style of the info pill.
+--- @field content string The content of the info pill.
+--- @field wrap boolean? Whether the content should be wrapped in its default container.
+--- @field update_visible fun(self, value: boolean) Update visibility of the info pill.
+--- @field update_label fun(self, value: string) Update the label of the info pill.
+--- @field update_style fun(self, value: string) Update the CSS of the info pill.
+--- @field update_content fun(self, value: string, wrap?: boolean) Update the content of the info pill.
+--- @field update_wrap fun(self, value: boolean) Update whether the content should be wrapped in its default container.
+
+*/}
+
+## Properties
+| Name | Type | Description |
+| --- | --- | --- |
+| `id` | `string` | The ID of the info pill. |
+| `visible` | `boolean` | Whether the info pill is visible. |
+| `label` | `string?` | The label of the info pill. |
+| `style` | `string?` | The CSS style of the info pill. |
+| `content` | `string` | The content of the info pill. |
+| `wrap` | `boolean?` | Whether the content should be wrapped in its default container. |
+
+---
+
+## Functions
+
+### `update_visible(value)`
+Update the visibility of the info pill.
+
+#### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `boolean` | Whether the info pill should be visible. |
+
+#### Example
+```lua title="client.lua"
+local info = exports.rhud:create_info({ ... })
+
+info:update_visible(true)
+```
+
+---
+
+### `update_label(value)`
+Update the label of the info pill.
+
+#### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `string` | The label of the info pill. |
+
+#### Example
+```lua title="client.lua"
+local info = exports.rhud:create_info({ ... })
+
+info:update_label('New Label')
+```
+
+---
+
+### `update_style(value)`
+Update the CSS style of the info pill.
+
+#### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `string` | The CSS style of the info pill. |
+
+#### Example
+```lua title="client.lua"
+local info = exports.rhud:create_info({ ... })
+
+info:update_style([[
+  .my-class {
+    color: red;
+  }
+]])
+```
+
+---
+
+### `update_content(value, wrap)`
+Update the content of the info pill.
+
+#### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `string` | The content of the info pill. |
+| `wrap` | `boolean?` | Whether the content should be wrapped in its default container. |
+
+#### Example
+```lua title="client.lua"
+local info = exports.rhud:create_info({ ... })
+
+info:update_content('New Content', true)
+```
+
+---
+
+### `update_wrap(value)`
+Update the wrap of the info pill.
+
+#### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `value` | `boolean` | Whether the content should be wrapped in its default container. |
+
+#### Example
+```lua title="client.lua"
+local info = exports.rhud:create_info({ ... })
+
+info:update_wrap(false)
+```
