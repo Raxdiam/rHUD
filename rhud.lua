@@ -23,6 +23,7 @@
 
 --- @class rHUDClient
 --- @field set_indicator_seatbelt fun(self: rHUDClient, seatbelt: boolean)
+--- @field set_indicator_anchor fun(self: rHUDClient, anchor: boolean)
 --- @field get_visible fun(self: rHUDClient): boolean Get whether the HUD is visible.
 --- @field set_visible fun(self: rHUDClient, visible: boolean) Set whether the HUD is visible.
 --- @field toggle_visible fun(self: rHUDClient) Toggle the visibility of the HUD.
