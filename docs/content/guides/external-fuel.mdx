@@ -1,0 +1,56 @@
+---
+title: External Fuel Script
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+If the built-in fuel script isn't sufficient for your needs, an external fuel script can be used.
+
+## Edit `GetFuelLevel`
+To make use of an the external fuel script of your choice, you will need to edit the `GetFuelLevel` function in `functions.lua`.\
+We will use [BigDaddy-Fuel](https://wiki.bigdaddyscripts.com/documentation/fuel) as an example external fuel script.
+
+<Steps>
+  <Step>
+    Open `functions.lua` in the `rhud` resource folder in the text editor of your choice.[^1]
+  </Step>
+  <Step>
+    Go to your external fuel script's documentation (if it has one) and find the export that retrieves the fuel level.\
+    For `BigDaddy-Fuel`, this export is `exports['BigDaddy-Fuel']:GetFuel(vehicle)`.
+  </Step>
+  <Step>
+    Replace the contents of the `GetFuelLevel` function to return the fuel level using the external fuel script's export.
+
+    ```lua title="functions.lua"
+    --- Gets the fuel level of a vehicle. Used by all vehicle modules.
+    --- @param veh integer The vehicle handle.
+    --- @return number fuel The fuel level of the vehicle as a percentage.
+    function GetFuelLevel(veh)
+      local max = GetVehicleHandlingFloat(veh, 'CHandlingData', 'fPetrolTankVolume') -- [!code --]
+      local fuel = GetVehicleFuelLevel(veh) -- [!code --]
+      return (fuel / max) * 100 -- [!code --]
+      return exports['BigDaddy-Fuel']:GetFuel(veh) -- [!code ++]
+    end
+    ```
+  </Step>
+  <Step>
+    Save `functions.lua` and restart rHUD or your server.
+  </Step>
+</Steps>
+
+## Add Dependency (Optional)
+To ensure that rHUD starts **after** the external fuel script, you can add the external fuel script as a dependency of rHUD in its `fxmanifest.lua`.
+
+```lua title="fxmanifest.lua"
+-- above contents of fxmanifest.lua ...
+
+dependency '/assetpacks' -- [!code --]
+dependencies { -- [!code ++]
+  '/assetpacks', -- [!code ++]
+  'BigDaddy-Fuel', -- [!code ++]
+} -- [!code ++]
+```
+
+---
+
+[^1]: See [Recommended Tools](/guides/recommended-tools) for the recommended text editor (VSCode) and its extensions.
