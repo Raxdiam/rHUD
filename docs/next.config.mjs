@@ -7,6 +7,8 @@ const config = {
   reactStrictMode: true,
   trailingSlash: true,
   basePath: '/docs',
+  distDir: process.env.NODE_ENV === 'development' ? '.next' : 'build',
+  output: 'standalone'
 };
 
 export default withMDX(config);
