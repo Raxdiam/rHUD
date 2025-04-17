@@ -28,7 +28,10 @@ config = {
       enabled = true, -- Enable the landcraft HUD module (default: true)
       tick_delay = 50, -- Time in milliseconds between module update ticks (default: 50)
       use_kmph = false, -- Use km/h instead of mph (default: false)
-      show_passenger_seatbelt = true, -- Show passenger seatbelt indicator. (default: true, note: This does not make it so passengers can use the seatbelt)
+      passenger = { -- Passenger options (note: these options will NOT make it so passengers can use the seatbelt)
+        show = false, -- Show landcraft HUD module to passengers (default: false)
+        seatbelt_only = false -- Show only the seatbelt indicator to passengers when `show` is true (default: false)
+      },
       seatbelt = { -- Landcraft built-in seatbelt script
         enabled = true, -- Enable the built-in seatbelt script (default: true)
         flythrough_speed = 30, -- Minimum speed required to fly through the windshield in configured units (default: 30)
@@ -47,6 +50,7 @@ config = {
     air = { -- HUD Module for Aircraft
       enabled = true, -- Enable the aircraft HUD module (default: true)
       tick_delay = 5, -- Time in milliseconds between module update ticks (default: 5)
+      show_passenger = false, -- Show aircraft HUD module to passenger (default: false)
       altimeter = { -- Altitude meter options
         unit = "ft", -- Unit of measurement (default: "ft", options: "ft", "m", "custom")
         unit_custom = 3.281, -- When `unit` is set to "custom", this is the multiplier to convert meters to the custom unit (default: 3.281)
@@ -60,6 +64,7 @@ config = {
     water = { -- HUD Module for Watercraft
       enabled = true, -- Enable watercraft HUD module (default: true)
       tick_delay = 50, -- Time in milliseconds between module update ticks (default: 50)
+      show_passenger = false, -- Show watercraft HUD module to passengers (default: false)
       anchor = { -- Watercraft built-in anchor script
         enabled = true, -- Enable the built-in anchor script (default: true)
         use_combo = true, -- Use key combination to toggle the anchor (default: true)
@@ -123,7 +128,7 @@ config = {
         cooldown = 20, -- Priority cooldown time in minutes (default: 20)
         messages = {
           in_progress = "~r~Priority call in progress. ~s~All other calls are on hold until conclusion.",
-          cooldown = "~r~Priority call concluded. ~s~Civilians must wait ~r~{time}~s~ minutes beore conducting another call.", -- {time} = Cooldown time in minutes
+          cooldown = "~r~Priority call concluded. ~s~Civilians must wait ~r~{time}~s~ minutes before conducting another call.", -- {time} = Cooldown time in minutes
           onhold = "~r~Priority calls on hold. ~s~No new priority calls allowed until this restriction is lifted.",
           cooldown_in_progress = "~r~Priority call in cooldown. ~s~Please wait ~r~{time}~s~ minutes before conducting another call.", -- {time} = Remaining cooldown time in minutes
           priority_no_permission = "~r~You do not have permission to conduct a priority call.",
