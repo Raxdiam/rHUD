@@ -40,3 +40,4 @@
 --- @field toggle_peacetime fun(self: rHUDServer) Toggle the PeaceTime status.
 --- @field get_priority fun(self: rHUDServer): 'active' | 'onhold' | 'cooldown' | 'inactive' Get the current priority status.
 --- @field set_priority fun(self: rHUDServer, status: 'active' | 'onhold' | 'cooldown' | 'inactive', text?: string) Set the current priority status.
+--- @field get_postal fun(self: rHUDServer, post: vector2): string Get the nearest postal code of the specified location.
