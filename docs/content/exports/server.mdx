@@ -114,3 +114,30 @@ exports.rhud:set_priority('active', 'AUsername')
 ```lua title="server.lua"
 exports.rhud:set_priority('inactive')
 ```
+
+---
+
+## `get_postal(pos)`
+Get the nearest postal code of the specified location.
+
+### Parameters
+| Parameter | Type | Description |
+| --- | --- | --- |
+| `pos` | `vector2` | The position to get the postal code for. |
+
+### Returns
+| Returns | Type | Description |
+| --- | --- | --- |
+| `postal` | `string` | The nearest postal code. |
+
+### Example
+```lua title="server.lua"
+local pos = vector2(0, 0)
+local postal = exports.rhud:get_postal(pos)
+```
+
+---
+
+## Footnotes
+
+- Type definitions that can be used with the [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) extension in VSCode are available on the [public GitHub repository](https://github.com/Raxdiam/rHUD).
