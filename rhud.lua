@@ -21,6 +21,10 @@
 --- @field content string The content of the info pill.
 --- @field wrap boolean? Whether the content should be wrapped in its default container.
 
+--- @class Postal
+--- @field code string The postal code.
+--- @field dist number The distance to the postal code.
+
 --- @class rHUDClient
 --- @field set_indicator_seatbelt fun(self: rHUDClient, seatbelt: boolean)
 --- @field set_indicator_anchor fun(self: rHUDClient, anchor: boolean)
@@ -40,4 +44,4 @@
 --- @field toggle_peacetime fun(self: rHUDServer) Toggle the PeaceTime status.
 --- @field get_priority fun(self: rHUDServer): 'active' | 'onhold' | 'cooldown' | 'inactive' Get the current priority status.
 --- @field set_priority fun(self: rHUDServer, status: 'active' | 'onhold' | 'cooldown' | 'inactive', text?: string) Set the current priority status.
---- @field get_postal fun(self: rHUDServer, post: vector2): string Get the nearest postal code of the specified location.
+--- @field get_postal fun(self: rHUDServer, post: vector2): Postal Get the nearest postal code of the specified location.
