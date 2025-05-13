@@ -1,5 +1,33 @@
 # Changelog
 
+## v1.6.1 (2025-4-19)
+- Fix minimap options in `config.lua` not taking effect
+
+## v1.6.0 (2025-4-17)
+- Added system for creating custom info module segments
+- Added editable function `Notify`
+- Added posted speed limit HUD module
+- Added notification for AOP status
+- Added new notification message options in config
+- Added client-side and server-side exports
+- Added engine toggle keybind
+- Added config options to show land, air, and water vehicle HUDs to passengers
+- Added config option to show location info HUD for passengers
+- Added config option to enable/disable the built-in anchor script
+- Added in-game config panel option to change minimap border thickness
+- Added blinking effect to land vehicle HUD's turn indicators
+- Improved the built-in boat anchor script
+- Changed ACE permission identifiers
+  - `rhud.config` is now `rhud.config.open`
+  - `rhud.config.locations` is now `rhud.config.layout`
+  - `rhud.priority` is now `rhud.priority.active`
+- Changed terminology "locations" to "layout" throughout entire script
+  - Config option `modules > config_panel > enforce_locations` is now `modules > config_panel > enforce_layout`
+  - Data file `data/hud_locations.json` is now `data/hud_layout.json`
+- Fixed vehicle turn indicator lights not being synchronized across clients
+- Fixed bug where priority could be set to active during cooldown
+- Fixed bug where if the player dies while buckled in a vehicle, the indicator persists but the seatbelt functionality does not
+
 ## v1.5.0 (2025-1-19)
 - Added localization support
 - Added editable functions
