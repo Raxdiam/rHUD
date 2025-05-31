@@ -1,7 +1,16 @@
 # Changelog
 
+## v1.7.0 (2025-5-31)
+- Added scale option to in-game config panel for each HUD module
+- Added oxygen meter to player module when underwater
+- Added vehicle model blacklist for vehicle HUD modules (`rhud/data/vehicle_blacklist.json`)
+- Added config option to hide username in priority status
+- Added config option to show fuel gauge for electric vehicles
+- Fuel gauge is now hidden for electric vehicles by default
+- Fixed `GetNetworkObject` warning in server console
+
 ## v1.6.1 (2025-4-19)
-- Fix minimap options in `config.lua` not taking effect
+- Fixed minimap options in `config.lua` not taking effect
 
 ## v1.6.0 (2025-4-17)
 - Added system for creating custom info module segments
