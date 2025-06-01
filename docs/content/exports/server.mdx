@@ -128,12 +128,15 @@ Get the nearest postal code of the specified location.
 ### Returns
 | Returns | Type | Description |
 | --- | --- | --- |
-| `postal` | `string` | The nearest postal code. |
+| `postal` | [`Postal`](/objects/postal/) | The nearest postal. |
 
 ### Example
 ```lua title="server.lua"
 local pos = vector2(0, 0)
 local postal = exports.rhud:get_postal(pos)
+
+print('code', postal.code)
+print('dist', postal.dist)
 ```
 
 ---

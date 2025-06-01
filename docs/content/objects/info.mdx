@@ -2,23 +2,6 @@
 title: Info
 ---
 
-{/* 
-
---- @class Info
---- @field id string The ID of the info pill.
---- @field visible boolean Whether the info pill is visible.
---- @field label string? The label of the info pill.
---- @field style string? The CSS style of the info pill.
---- @field content string The content of the info pill.
---- @field wrap boolean? Whether the content should be wrapped in its default container.
---- @field update_visible fun(self, value: boolean) Update visibility of the info pill.
---- @field update_label fun(self, value: string) Update the label of the info pill.
---- @field update_style fun(self, value: string) Update the CSS of the info pill.
---- @field update_content fun(self, value: string, wrap?: boolean) Update the content of the info pill.
---- @field update_wrap fun(self, value: boolean) Update whether the content should be wrapped in its default container.
-
-*/}
-
 ## Properties
 | Name | Type | Description |
 | --- | --- | --- |
@@ -120,3 +103,9 @@ local info = exports.rhud:create_info({ ... })
 
 info:update_wrap(false)
 ```
+
+---
+
+## Footnotes
+
+- Type definitions that can be used with the [Lua](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) extension in VSCode are available on the [public GitHub repository](https://github.com/Raxdiam/rHUD).
