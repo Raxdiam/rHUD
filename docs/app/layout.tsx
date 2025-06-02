@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata = {
   title: 'rHUD Documentation',
   icons: {
-    icon: '/docs/favicon.ico',  // If your site is served at /docs
+    icon: '/docs/favicon.ico',
   },
 };
 
@@ -18,7 +18,15 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex flex-col min-h-screen">
-        <RootProvider>{children}</RootProvider>
+        <RootProvider
+          search={{
+            options: {
+              api: '/docs/api/search',
+            },
+          }}
+        >
+          {children}
+        </RootProvider>
       </body>
     </html>
   );
