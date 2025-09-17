@@ -1,0 +1,46 @@
+---
+title: "Error: Error parsing script … <1>"
+---
+
+When starting an escrow-protected resource, you may see an error like this in the server console (or client F8 console):
+```
+[script:rhud] Error parsing script @rhud/script/client.lua in resource rhud: @rhud/script/client.lua:1: syntax error near '<\1>'
+[c-scripting-core] Failed to load script script/client.lua.
+```
+
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+## Causes and Solutions
+1. ### Outdated Server Artifacts
+   This error commonly occurs when the server is running artifact builds that don't support the latest escrow encryption.
+   <Callout title="Solution">
+     - **Update to latest artifacts:** Upgrade your server artifacts to the latest build.[^1]
+     - **Full restart after update:** Stop the server completely, replace artifacts, then start it again. Don't hot-restart.
+     - **Managed hosts:** If using txAdmin/ZAP-Hosting or similar, use their panel to install the latest artifacts.
+   </Callout>
+2. ### Corrupted or Partial Upload
+   If the resource was uploaded file-by-file, or via an unreliable FTP client, encrypted files may be corrupted - leading to a parser error on line 1.
+   <Callout title="Solution">
+     - **Upload the ZIP and extract on the server:** Transfer the resource archive to your VPS and extract it there to avoid missed files.
+     - **Avoid problematic FTP clients:** Some clients (e.g., FileZilla with default settings) may corrupt or skip files. Prefer **WinSCP** or another reliable client.
+     - **Re-download a clean copy:** Download the resource again from the [Cfx.re Portal](https://portal.cfx.re/) in case the previous download was corrupted.
+   </Callout>
+3. ### Modified or Missing Escrowed Files
+   Editing, removing, or otherwise altering escrow-protected files can cause parsing to fail immediately.
+   <Callout title="Solution">
+     - **Do not edit protected files:** Restore the resource to its original state.
+     - **Reinstall the resource:** Delete the existing folder and re-upload a fresh copy from the official source to ensure integrity.
+   </Callout>
+4. ### Restart Requirements
+   After updating artifacts or re-uploading the resource, the running server process may still have old state.
+   <Callout title="Solution">
+     Perform a full server restart after any changes (artifact updates, re-uploads, or configuration edits).
+   </Callout>
+
+---
+
+[^1]: **FiveM server artifacts listings:**
+    - **Windows:** https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/
+    - **Linux:** https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/
