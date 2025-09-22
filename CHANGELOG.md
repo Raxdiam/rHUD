@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.7.1 (2025-9-22)
+- Fixed a bug where only one resource's custom info would appear when multiple used the `create_info` export
+
 ## v1.7.0 (2025-5-31)
 - Added scale option to in-game config panel for each HUD module
 - Added oxygen meter to player module when underwater
