@@ -15,7 +15,7 @@
 
 --- @class InfoOptions
 --- @field id string The ID of the info pill.
---- @field visible boolean Whether the info pill is visible.
+--- @field visible boolean? Whether the info pill is visible.
 --- @field label string? The label of the info pill.
 --- @field style string? The CSS style of the info pill.
 --- @field content string The content of the info pill.
