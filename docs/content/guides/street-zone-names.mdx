@@ -1,0 +1,81 @@
+---
+title: Street & Zone Names
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+rHUD displays the street and zone names returned by the game.[^1]\
+If you want to rename streets or zones, create a small FiveM resource that registers replacement text entries on the client.
+
+## Find the Hashes
+
+Use [jgscripts/gtav-street-zone-hashes](https://github.com/jgscripts/gtav-street-zone-hashes) to find the street or zone you want to rename.
+
+- Streets use numeric hashes from `streets.txt`, such as `0x7999837`.
+- Zones use label names from `zones.txt`, such as `AIRP`.
+
+## Create a Resource
+
+<Steps>
+  <Step>
+    Create a new resource folder, for example `custom-location-names`.
+  </Step>
+  <Step>
+    Create an `fxmanifest.lua` file inside the resource folder.
+
+    ```lua title="fxmanifest.lua"
+    fx_version 'cerulean'
+    game 'gta5'
+
+    client_script 'client.lua'
+    ```
+  </Step>
+  <Step>
+    Create a `client.lua` file and add one `AddTextEntryByHash` call for each street or zone you want to rename.
+
+    ```lua title="client.lua"
+    -- 0x7999837 = Route 68
+    AddTextEntryByHash(0x7999837, 'Route 66')
+
+    -- AIRP = Los Santos International Airport
+    AddTextEntryByHash(`AIRP`, 'LAX Airport')
+    ```
+  </Step>
+  <Step>
+    Add the resource to your `server.cfg`.
+
+    ```properties title="server.cfg"
+    ensure custom-location-names
+    ```
+  </Step>
+  <Step>
+    Restart the resource or your server, then join the server and check the renamed location in-game.
+  </Step>
+</Steps>
+
+## Adding More Names
+
+You can add as many replacements as needed to the same `client.lua` file.
+
+```lua title="client.lua"
+-- Streets
+AddTextEntryByHash(0x7999837, 'Route 66')
+AddTextEntryByHash(0x40D0731C, 'Adam Street')
+
+-- Zones
+AddTextEntryByHash(`AIRP`, 'LAX Airport')
+AddTextEntryByHash(`SANDY`, 'Sandy Shores Township')
+```
+
+Some roads have more than one hash. If part of a renamed road still shows the old name, find the other matching entry in `streets.txt` and add another `AddTextEntryByHash` call for it.
+
+## Troubleshooting
+
+1. Make sure the script is a client script, not a server script.
+2. Make sure the resource is started in `server.cfg`.
+3. For streets, copy the hash exactly as shown in `streets.txt`.
+4. For zones, wrap the zone label in backticks, for example `` `AIRP` ``.
+
+---
+
+[^1]: This does not modify rHUD directly. The resource changes the text entries returned by GTA/FiveM, and rHUD displays the returned names.
